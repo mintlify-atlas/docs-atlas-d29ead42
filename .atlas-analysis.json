@@ -1,0 +1,133 @@
+{
+  "projectType": "saas",
+  "projectName": "ADMA URL Shortener",
+  "projectDescription": "Cloud-native URL shortener with anonymous and authenticated modes, built with Spring Boot, React, and AWS infrastructure",
+  "theme": "aspen",
+  "primaryColor": "#f97316",
+  "lightColor": "#fb923c",
+  "darkColor": "#ea580c",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "architecture"
+            ]
+          },
+          {
+            "group": "Features",
+            "pages": [
+              "features/anonymous-mode",
+              "features/authenticated-mode",
+              "features/url-expiration",
+              "features/analytics"
+            ]
+          },
+          {
+            "group": "Development",
+            "pages": [
+              "development/local-setup",
+              "development/docker-compose",
+              "development/environment-variables"
+            ]
+          },
+          {
+            "group": "Deployment",
+            "pages": [
+              "deployment/aws-overview",
+              "deployment/terraform",
+              "deployment/ecs-fargate",
+              "deployment/rds-setup",
+              "deployment/secrets-management",
+              "deployment/cicd"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "Authentication",
+            "pages": [
+              "api/auth/register",
+              "api/auth/login"
+            ]
+          },
+          {
+            "group": "URL Management",
+            "pages": [
+              "api/urls/create",
+              "api/urls/list",
+              "api/urls/delete",
+              "api/urls/sync",
+              "api/urls/create-public"
+            ]
+          },
+          {
+            "group": "Analytics",
+            "pages": [
+              "api/stats/overview",
+              "api/redirect"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Infrastructure",
+        "groups": [
+          {
+            "group": "AWS Services",
+            "pages": [
+              "infrastructure/vpc-networking",
+              "infrastructure/ecs-cluster",
+              "infrastructure/rds-database",
+              "infrastructure/load-balancer",
+              "infrastructure/security-groups"
+            ]
+          },
+          {
+            "group": "Terraform Modules",
+            "pages": [
+              "infrastructure/terraform/network-module",
+              "infrastructure/terraform/ecs-module",
+              "infrastructure/terraform/rds-module",
+              "infrastructure/terraform/iam-module",
+              "infrastructure/terraform/security-module"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Anonymous URL creation with 8-hour TTL",
+    "Authenticated user accounts with permanent links",
+    "JWT-based authentication with Spring Security",
+    "Real-time redirect latency tracking using Welford's algorithm",
+    "Automated cleanup of expired URLs with @Scheduled tasks",
+    "URL synchronization from anonymous to authenticated mode",
+    "HTTP 410 Gone responses for expired links",
+    "PostgreSQL database with AWS RDS support",
+    "Containerized deployment with Docker and AWS ECS Fargate",
+    "Infrastructure as Code with Terraform modules",
+    "Application Load Balancer with HTTPS support",
+    "React SPA with TypeScript and shadcn/ui components"
+  ],
+  "publicApiSurface": [
+    "POST /api/auth/register",
+    "POST /api/auth/login",
+    "POST /api/urls",
+    "GET /api/urls",
+    "DELETE /api/urls/{id}",
+    "POST /api/urls/sync",
+    "POST /api/urls/public",
+    "GET /{shortCode}",
+    "GET /api/stats"
+  ]
+}
